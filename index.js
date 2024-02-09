@@ -3,7 +3,7 @@ const { message } = require('telegraf/filters')
 const text = require('./const')
 require('dotenv').config()
 //require('events').EventEmitter.defaultMaxListeners = Infinity;
-require('events').EventEmitter.defaultMaxListeners = 100;
+require('events').EventEmitter.defaultMaxListeners = 0;
 
 const bot = new Telegraf(process.env.BOT_TOKEN)
 bot.start((ctx) => ctx.reply(`Привет ${ctx.message.from.first_name ? ctx.message.from.first_name : "Привет незнакомец"}, Какой вопрос вас интересует?`, getMainMenu()))
